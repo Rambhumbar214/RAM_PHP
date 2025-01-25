@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <title>Mobile Number Validation</title>
+</head>
+<body>
+    <h2>Mobile Number Validation</h2>
+    <form  method="POST" action="mobilevalidation.php">
+        <label for="mobile">Enter Mobile Number:</label>
+        <input type="text" id="mobile" name="mobile" required>
+        <input type="submit" name="Validation" value="submit">
+    </form>
+
 <?php
 
 if (isset($_POST['Validation'])) 
@@ -18,3 +32,5 @@ if (isset($_POST['Validation']))
     }
 }
 ?>
+</body>
+</html>
