@@ -12,7 +12,7 @@ function calculate($num1 = 0, $num2 = 0, $operation = 'add') {
             return $num2 != 0 ? $num1 / $num2 : 'Error: Division by zero';
         default:
             return 'Invalid operation';
-    }
+    } 
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
