@@ -28,7 +28,7 @@ function menu()
     echo "2. Traverse the element in random order\n";
     echo "3. Exit\n";
     echo "Enter your choice: ";
-    $choice = trim(fgets(STDIN));
+    $choice = readline("Enter your choice(1/2/3):");
 
     switch ($choice) {
         case 1:
@@ -53,5 +53,6 @@ function menu()
 
 } 
 }
+menu()
 
 ?>
