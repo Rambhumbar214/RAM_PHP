@@ -1,76 +1,69 @@
 <?php
-
-
-function mergeArrays($arr1, $arr2) {
-    return array_merge($arr1, $arr2);
+function mergeArrays($array1, $array2)
+{
+    return array_merge($array1,$array2);
 }
 
-
-function intersection($arr1, $arr2) {
-    return array_intersect_key($arr1, $arr2);
+function intersection($array1,$array2)
+{
+    return array_intersect($array1,$array2);
 }
 
-
-function union($arr1, $arr2) {
-    return $arr1 + $arr2; 
+function union($array1,$array2)
+{
+return array_merge($array1,$array2);    
 }
 
-
-function setDifference($arr1, $arr2) {
-    return array_diff_key($arr1, $arr2); 
+function setdifference($array1,$array2)
+{
+    return array_diff($array1,$array2);
 }
 
+$array1=[
+    "a"=>"apple",
+    "b"=>"banana",
+    "c"=>"cherry"
+];
 
-function displayMenu() {
-    echo "\nMenu:\n";
-    echo "1. Merge two arrays\n";
-    echo "2. Find intersection of two arrays\n";
-    echo "3. Find union of two arrays\n";
+$array2=[
+    "b"=>"banana",
+    "c"=>"cherry",
+    "d"=>"date"
+];
+
+do{
+    echo"\nMenu:\n";
+    echo "1. Merge the given array\n";
+    echo "2. Find the intersection of two arrays\n";
+    echo "3. Find the union of two arrays\n";
     echo "4. Find set difference of two arrays\n";
-    echo "5. Exit\n";
-}
-
-
-function main() {
+    echo "5.Exit\n";
+    echo "Enter your Choice";
+    $choice=intval(trim(fgets(STDIN)));
     
-    $arr1 = array('a' => 1, 'b' => 2, 'c' => 3);
-    $arr2 = array('b' => 2, 'c' => 4, 'd' => 5);
-
-    while (true) {
-        displayMenu();
-        $choice = intval(readline("Enter your choice: "));
-
-        switch ($choice) {
-            case 1:
-                $result = mergeArrays($arr1, $arr2);
-                echo "Merged Array: ";
-                print_r($result);
-                break;
-            case 2:
-                $result = intersection($arr1, $arr2);
-                echo "Intersection: ";
-                print_r($result);
-                break;
-            case 3:
-                $result = union($arr1, $arr2);
-                echo "Union: ";
-                print_r($result);
-                break;
-            case 4:
-                $result = setDifference($arr1, $arr2);
-                echo "Set Difference (arr1 - arr2): ";
-                print_r($result);
-                break;
-            case 5:
-                echo "Exiting program.\n";
-                exit;
+    switch($choice)
+    {
+        case 1:
+            echo "Merging Arrays:\n";
+            print_r(mergeArrays($array1,$array2));
+            break;
+        case 2:
+            echo "Intersection of arrays:\n";
+            print_r(intersection($array1,$array2));
+            break;
+        case 3:
+            echo "Union of arrays:\n";
+            print_r(union($array1,$array2));
+            break;
+        case 4:
+            echo "Set Difference (Array1- Array2):\n";
+            print_r(setDifference($array1,$array2));
+            break;
+        case 5:
+            echo "Exiting...\n";
+            break;
             default:
-                echo "Invalid choice. Please try again.\n";
-        }
+            echo "Invlid Choice. Please try again.\n";
     }
-}
-
-
-main();
-
+}while ($choice !=5);
 ?>
